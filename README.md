@@ -1,9 +1,10 @@
 # Layer Maker
 
+Convert Figma layers to HTML boilerplate, nested CSS selectors, and a JS object full of DOM references. 
 
 # Todo
 
-- [x] Children with the same name should look like `key => array`
+- [ ] Add to README
 
 # How to Use
 
