@@ -11,85 +11,85 @@ const helper = () => {
             },
             row: [
                 {
-                    e: qsa(".designs .calculator .row")[0],
+                    e: qs(".designs .calculator .row:nth-child(2)"),
                     btn: [
                         {
-                            e: qsa(".designs .calculator .row .btn")[0],
+                            e: qs(".designs .calculator .row:nth-child(2) .btn:nth-child(1)"),
                         },
                         {
-                            e: qsa(".designs .calculator .row .btn")[1],
+                            e: qs(".designs .calculator .row:nth-child(2) .btn:nth-child(2)"),
                         },
                         {
-                            e: qsa(".designs .calculator .row .btn")[2],
+                            e: qs(".designs .calculator .row:nth-child(2) .btn:nth-child(3)"),
                         },
                         {
-                            e: qsa(".designs .calculator .row .btn")[3],
+                            e: qs(".designs .calculator .row:nth-child(2) .btn:nth-child(4)"),
                         },
                     ],
                 },
                 {
-                    e: qsa(".designs .calculator .row")[1],
+                    e: qs(".designs .calculator .row:nth-child(3)"),
                     btn: [
                         {
-                            e: qsa(".designs .calculator .row .btn")[0],
+                            e: qs(".designs .calculator .row:nth-child(3) .btn:nth-child(1)"),
                         },
                         {
-                            e: qsa(".designs .calculator .row .btn")[1],
+                            e: qs(".designs .calculator .row:nth-child(3) .btn:nth-child(2)"),
                         },
                         {
-                            e: qsa(".designs .calculator .row .btn")[2],
+                            e: qs(".designs .calculator .row:nth-child(3) .btn:nth-child(3)"),
                         },
                         {
-                            e: qsa(".designs .calculator .row .btn")[3],
+                            e: qs(".designs .calculator .row:nth-child(3) .btn:nth-child(4)"),
                         },
                     ],
                 },
                 {
-                    e: qsa(".designs .calculator .row")[2],
+                    e: qs(".designs .calculator .row:nth-child(4)"),
                     btn: [
                         {
-                            e: qsa(".designs .calculator .row .btn")[0],
+                            e: qs(".designs .calculator .row:nth-child(4) .btn:nth-child(1)"),
                         },
                         {
-                            e: qsa(".designs .calculator .row .btn")[1],
+                            e: qs(".designs .calculator .row:nth-child(4) .btn:nth-child(2)"),
                         },
                         {
-                            e: qsa(".designs .calculator .row .btn")[2],
+                            e: qs(".designs .calculator .row:nth-child(4) .btn:nth-child(3)"),
                         },
                         {
-                            e: qsa(".designs .calculator .row .btn")[3],
+                            e: qs(".designs .calculator .row:nth-child(4) .btn:nth-child(4)"),
                         },
                     ],
                 },
                 {
-                    e: qsa(".designs .calculator .row")[3],
+                    e: qs(".designs .calculator .row:nth-child(5)"),
                     btn: [
                         {
-                            e: qsa(".designs .calculator .row .btn")[0],
+                            e: qs(".designs .calculator .row:nth-child(5) .btn:nth-child(1)"),
                         },
                         {
-                            e: qsa(".designs .calculator .row .btn")[1],
+                            e: qs(".designs .calculator .row:nth-child(5) .btn:nth-child(2)"),
                         },
                         {
-                            e: qsa(".designs .calculator .row .btn")[2],
+                            e: qs(".designs .calculator .row:nth-child(5) .btn:nth-child(3)"),
                         },
                         {
-                            e: qsa(".designs .calculator .row .btn")[3],
+                            e: qs(".designs .calculator .row:nth-child(5) .btn:nth-child(4)"),
                         },
                     ],
                 },
                 {
-                    e: qsa(".designs .calculator .row")[4],
+                    e: qs(".designs .calculator .row:nth-child(6)"),
                     btn: [
                         {
-                            e: qsa(".designs .calculator .row .btn")[0],
+                            e: qs(".designs .calculator .row:nth-child(6) .btn:nth-child(1)"),
                         },
                         {
-                            e: qsa(".designs .calculator .row .btn")[1],
+                            e: qs(".designs .calculator .row:nth-child(6) .btn:nth-child(2)"),
                         },
                     ],
                     btnlrg: {
-                        e: qs(".designs .calculator .row .btnlrg"),
+                        e: qs(".designs .calculator .row:nth-child(6) .btnlrg"),
                     },
                 },
             ],
@@ -102,16 +102,16 @@ const helper = () => {
                     e: qs(".designs .interface .main .nav"),
                     btn: [
                         {
-                            e: qsa(".designs .interface .main .nav .btn")[0],
+                            e: qs(".designs .interface .main .nav .btn:nth-child(1)"),
                         },
                         {
-                            e: qsa(".designs .interface .main .nav .btn")[1],
+                            e: qs(".designs .interface .main .nav .btn:nth-child(2)"),
                         },
                         {
-                            e: qsa(".designs .interface .main .nav .btn")[2],
+                            e: qs(".designs .interface .main .nav .btn:nth-child(3)"),
                         },
                         {
-                            e: qsa(".designs .interface .main .nav .btn")[3],
+                            e: qs(".designs .interface .main .nav .btn:nth-child(4)"),
                         },
                     ],
                 },
@@ -119,21 +119,21 @@ const helper = () => {
                     e: qs(".designs .interface .main .body"),
                     section: [
                         {
-                            e: qsa(".designs .interface .main .body .section")[0],
+                            e: qs(".designs .interface .main .body .section:nth-child(1)"),
                             text: {
-                                e: qs(".designs .interface .main .body .section .text"),
+                                e: qs(".designs .interface .main .body .section:nth-child(1) .text"),
                             },
                             title: {
-                                e: qs(".designs .interface .main .body .section .title"),
+                                e: qs(".designs .interface .main .body .section:nth-child(1) .title"),
                             },
                         },
                         {
-                            e: qsa(".designs .interface .main .body .section")[1],
+                            e: qs(".designs .interface .main .body .section:nth-child(2)"),
                             text: {
-                                e: qs(".designs .interface .main .body .section .text"),
+                                e: qs(".designs .interface .main .body .section:nth-child(2) .text"),
                             },
                             title: {
-                                e: qs(".designs .interface .main .body .section .title"),
+                                e: qs(".designs .interface .main .body .section:nth-child(2) .title"),
                             },
                         },
                     ],
@@ -143,16 +143,16 @@ const helper = () => {
                 e: qs(".designs .interface .side"),
                 btn: [
                     {
-                        e: qsa(".designs .interface .side .btn")[0],
+                        e: qs(".designs .interface .side .btn:nth-child(1)"),
                     },
                     {
-                        e: qsa(".designs .interface .side .btn")[1],
+                        e: qs(".designs .interface .side .btn:nth-child(2)"),
                     },
                     {
-                        e: qsa(".designs .interface .side .btn")[2],
+                        e: qs(".designs .interface .side .btn:nth-child(3)"),
                     },
                     {
-                        e: qsa(".designs .interface .side .btn")[3],
+                        e: qs(".designs .interface .side .btn:nth-child(4)"),
                     },
                 ],
             },

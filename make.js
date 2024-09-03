@@ -54,16 +54,17 @@ function main() {
         function getIndent(size) {
             return Array(size).fill(" ").join("");
         }
-        function getJS(root, path, nth, indent) {
+        function getJS(root, path, nth, childIndex, indent) {
             
             if (nth !== null) {
                 lines.push(`${getIndent(indent)}{`);
                 indent += 4;
+                path.push(`${root["name"]}:nth-child(${childIndex + 1})`);
+            } else {
+                path.push(root["name"]);
             }
 
-            path.push(root["name"]);
-            const q = (nth === null) ? ["qs", ""] : ["qsa", `[${nth}]`];
-            lines.push(`${getIndent(indent)}e: ${q[0]}(".${path.join(" .")}")${q[1]},`);
+            lines.push(`${getIndent(indent)}e: qs(".${path.join(" .")}"),`);
             
             const seen = {};
             const fz = (() => {
@@ -82,7 +83,7 @@ function main() {
                 const count = fz[child["name"]];
                 if (count === 1) {
                     lines.push(`${getIndent(indent)}${child["name"]}: {`);
-                    getJS(child, path, null, indent + 4);
+                    getJS(child, path, null, 0, indent + 4);
                     lines.push(`${getIndent(indent)}},`);
 
                 } else {
@@ -94,7 +95,7 @@ function main() {
                         while (j < children.length) {
                             const peerchild = children[j];
                             if (peerchild["name"] === child["name"]) {
-                                getJS(peerchild, path, nth, indent + 4);
+                                getJS(peerchild, path, nth, j, indent + 4);
                                 nth += 1;
                             }
                             j += 1;
@@ -112,7 +113,7 @@ function main() {
             }
         }
         lines.push(`    const ${data["name"]} = {`);
-        getJS(data, [], null, 8);
+        getJS(data, [], null, 0, 8);
         lines.push(`    };`);
         return {name: data["name"], lines};
     })();
