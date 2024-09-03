@@ -5,6 +5,8 @@ Convert Figma layers to HTML boilerplate, nested CSS selectors, and a JS object 
 # Todo
 
 - [ ] Add to README
+- [ ] Examine multiple rows with btns. The selectors will grab only the first row.
+    - something like `.root .row:nth-child(n) .btn` will be needed
 
 # How to Use
 
