@@ -35,7 +35,13 @@ function main() {
         }
         function getCSS(root, indent) {
             lines.push(`${getIndent(indent)}.${root["name"]} {`);
-            root["children"].forEach(child => getCSS(child, indent + 2));
+            const seen = {};
+            root["children"].forEach(child => {
+                if (!(child["name"] in seen)) {
+                    seen[child["name"]] = true;
+                    getCSS(child, indent + 2)
+                }
+            });
             lines.push(`${getIndent(indent)}}`);
         }
         getCSS(data, 0);
