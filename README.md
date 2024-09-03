@@ -18,7 +18,7 @@ Convert Figma layers to HTML boilerplate, nested CSS selectors, and a JS object 
 
 1. Run the following in the developer console in Figma:
 
-js```
+```js
 await figma.loadAllPagesAsync();
 const root = figma.root.children[0];
 const json = layer => {
