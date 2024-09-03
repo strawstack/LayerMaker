@@ -50,9 +50,14 @@ function main() {
         }
         function getJS(root, path, nth, indent) {
             
+            if (nth !== null) {
+                lines.push(`${getIndent(indent)}{`);
+                indent += 4;
+            }
+
             path.push(root["name"]);
-            const q = (nth === 1) ? "qs" : "qsa";
-            lines.push(`${getIndent(indent)}e: ${q}(".${path.join(" .")}"),`);
+            const q = (nth === null) ? ["qs", ""] : ["qsa", `[${nth}]`];
+            lines.push(`${getIndent(indent)}e: ${q[0]}(".${path.join(" .")}")${q[1]},`);
             
             const seen = {};
             const fz = (() => {
@@ -64,21 +69,44 @@ function main() {
                 return fz;
             })();
 
-            root["children"].forEach(child => {
+            let index = 0;
+            const { children } = root;
+            while (index < children.length) {
+                const child = children[index];
                 const count = fz[child["name"]];
-                if (count === 1 || !(child["name"] in seen)) {
-                    seen[child["name"]] = true;
+                if (count === 1) {
                     lines.push(`${getIndent(indent)}${child["name"]}: {`);
-                    getJS(child, path, count, indent + 4);
+                    getJS(child, path, null, indent + 4);
                     lines.push(`${getIndent(indent)}},`);
+
+                } else {
+                    if (!(child["name"] in seen)) {
+                        seen[child["name"]] = true;
+                        lines.push(`${getIndent(indent)}${child["name"]}: [`);
+                        let nth = 0;
+                        let j = index;
+                        while (j < children.length) {
+                            const peerchild = children[j];
+                            if (peerchild["name"] === child["name"]) {
+                                getJS(peerchild, path, nth, indent + 4);
+                                nth += 1;
+                            }
+                            j += 1;
+                        }
+                        lines.push(`${getIndent(indent)}],`);
+                    }
                 }
-            });
-            
-            //lines.push(`${getIndent(indent)}},`);
+                index += 1;
+            }
             path.pop();
+
+            if (nth !== null) {
+                indent -= 4;
+                lines.push(`${getIndent(indent)}},`);
+            }
         }
         lines.push(`    const ${data["name"]} = {`);
-        getJS(data, [], 0, 8);
+        getJS(data, [], null, 8);
         lines.push(`    };`);
         return {name: data["name"], lines};
     })();

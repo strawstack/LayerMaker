@@ -1,150 +1,160 @@
 const helper = () => {
+    const qs = selector => document.querySelector(selector);
     const qsa = selector => document.querySelectorAll(selector);
 
     const designs = {
-        e: qsa(".designs")[0],
+        e: qs(".designs"),
         calculator: {
-            e: qsa(".designs .calculator")[0],
+            e: qs(".designs .calculator"),
             screen: {
-                e: qsa(".designs .calculator .screen")[0],
+                e: qs(".designs .calculator .screen"),
             },
-            row: {
-                e: qsa(".designs .calculator .row")[0],
-                btn: {
-                    e: qsa(".designs .calculator .row .btn")[0],
-                },
-                btn: {
-                    e: qsa(".designs .calculator .row .btn")[0],
-                },
-                btn: {
-                    e: qsa(".designs .calculator .row .btn")[0],
-                },
-                btn: {
-                    e: qsa(".designs .calculator .row .btn")[0],
-                },
-            },
-            row: {
-                e: qsa(".designs .calculator .row")[0],
-                btn: [
-                  {
-                    e: qsa(".designs .calculator .row .btn")[0],
-                    child: {
-                      e: qs(".designs .calculator .row .btn")
-                    }
-                  }
-                ] 
-                
+            row: [
                 {
-                    e: qsa(".designs .calculator .row .btn")[0],
+                    e: qsa(".designs .calculator .row")[0],
+                    btn: [
+                        {
+                            e: qsa(".designs .calculator .row .btn")[0],
+                        },
+                        {
+                            e: qsa(".designs .calculator .row .btn")[1],
+                        },
+                        {
+                            e: qsa(".designs .calculator .row .btn")[2],
+                        },
+                        {
+                            e: qsa(".designs .calculator .row .btn")[3],
+                        },
+                    ],
                 },
-                btn: {
-                    e: qsa(".designs .calculator .row .btn")[0],
+                {
+                    e: qsa(".designs .calculator .row")[1],
+                    btn: [
+                        {
+                            e: qsa(".designs .calculator .row .btn")[0],
+                        },
+                        {
+                            e: qsa(".designs .calculator .row .btn")[1],
+                        },
+                        {
+                            e: qsa(".designs .calculator .row .btn")[2],
+                        },
+                        {
+                            e: qsa(".designs .calculator .row .btn")[3],
+                        },
+                    ],
                 },
-                btn: {
-                    e: qsa(".designs .calculator .row .btn")[0],
+                {
+                    e: qsa(".designs .calculator .row")[2],
+                    btn: [
+                        {
+                            e: qsa(".designs .calculator .row .btn")[0],
+                        },
+                        {
+                            e: qsa(".designs .calculator .row .btn")[1],
+                        },
+                        {
+                            e: qsa(".designs .calculator .row .btn")[2],
+                        },
+                        {
+                            e: qsa(".designs .calculator .row .btn")[3],
+                        },
+                    ],
                 },
-                btn: {
-                    e: qsa(".designs .calculator .row .btn")[0],
+                {
+                    e: qsa(".designs .calculator .row")[3],
+                    btn: [
+                        {
+                            e: qsa(".designs .calculator .row .btn")[0],
+                        },
+                        {
+                            e: qsa(".designs .calculator .row .btn")[1],
+                        },
+                        {
+                            e: qsa(".designs .calculator .row .btn")[2],
+                        },
+                        {
+                            e: qsa(".designs .calculator .row .btn")[3],
+                        },
+                    ],
                 },
-            },
-            row: {
-                e: qsa(".designs .calculator .row")[0],
-                btn: {
-                    e: qsa(".designs .calculator .row .btn")[0],
+                {
+                    e: qsa(".designs .calculator .row")[4],
+                    btn: [
+                        {
+                            e: qsa(".designs .calculator .row .btn")[0],
+                        },
+                        {
+                            e: qsa(".designs .calculator .row .btn")[1],
+                        },
+                    ],
+                    btnlrg: {
+                        e: qs(".designs .calculator .row .btnlrg"),
+                    },
                 },
-                btn: {
-                    e: qsa(".designs .calculator .row .btn")[0],
-                },
-                btn: {
-                    e: qsa(".designs .calculator .row .btn")[0],
-                },
-                btn: {
-                    e: qsa(".designs .calculator .row .btn")[0],
-                },
-            },
-            row: {
-                e: qsa(".designs .calculator .row")[0],
-                btn: {
-                    e: qsa(".designs .calculator .row .btn")[0],
-                },
-                btn: {
-                    e: qsa(".designs .calculator .row .btn")[0],
-                },
-                btn: {
-                    e: qsa(".designs .calculator .row .btn")[0],
-                },
-                btn: {
-                    e: qsa(".designs .calculator .row .btn")[0],
-                },
-            },
-            row: {
-                e: qsa(".designs .calculator .row")[0],
-                btn: {
-                    e: qsa(".designs .calculator .row .btn")[0],
-                },
-                btn: {
-                    e: qsa(".designs .calculator .row .btn")[0],
-                },
-                btnlrg: {
-                    e: qsa(".designs .calculator .row .btnlrg")[0],
-                },
-            },
+            ],
         },
         interface: {
-            e: qsa(".designs .interface")[0],
+            e: qs(".designs .interface"),
             main: {
-                e: qsa(".designs .interface .main")[0],
+                e: qs(".designs .interface .main"),
                 nav: {
-                    e: qsa(".designs .interface .main .nav")[0],
-                    btn: {
-                        e: qsa(".designs .interface .main .nav .btn")[0],
-                    },
-                    btn: {
-                        e: qsa(".designs .interface .main .nav .btn")[0],
-                    },
-                    btn: {
-                        e: qsa(".designs .interface .main .nav .btn")[0],
-                    },
-                    btn: {
-                        e: qsa(".designs .interface .main .nav .btn")[0],
-                    },
+                    e: qs(".designs .interface .main .nav"),
+                    btn: [
+                        {
+                            e: qsa(".designs .interface .main .nav .btn")[0],
+                        },
+                        {
+                            e: qsa(".designs .interface .main .nav .btn")[1],
+                        },
+                        {
+                            e: qsa(".designs .interface .main .nav .btn")[2],
+                        },
+                        {
+                            e: qsa(".designs .interface .main .nav .btn")[3],
+                        },
+                    ],
                 },
                 body: {
-                    e: qsa(".designs .interface .main .body")[0],
-                    section: {
-                        e: qsa(".designs .interface .main .body .section")[0],
-                        text: {
-                            e: qsa(".designs .interface .main .body .section .text")[0],
+                    e: qs(".designs .interface .main .body"),
+                    section: [
+                        {
+                            e: qsa(".designs .interface .main .body .section")[0],
+                            text: {
+                                e: qs(".designs .interface .main .body .section .text"),
+                            },
+                            title: {
+                                e: qs(".designs .interface .main .body .section .title"),
+                            },
                         },
-                        title: {
-                            e: qsa(".designs .interface .main .body .section .title")[0],
+                        {
+                            e: qsa(".designs .interface .main .body .section")[1],
+                            text: {
+                                e: qs(".designs .interface .main .body .section .text"),
+                            },
+                            title: {
+                                e: qs(".designs .interface .main .body .section .title"),
+                            },
                         },
-                    },
-                    section: {
-                        e: qsa(".designs .interface .main .body .section")[0],
-                        text: {
-                            e: qsa(".designs .interface .main .body .section .text")[0],
-                        },
-                        title: {
-                            e: qsa(".designs .interface .main .body .section .title")[0],
-                        },
-                    },
+                    ],
                 },
             },
             side: {
-                e: qsa(".designs .interface .side")[0],
-                btn: {
-                    e: qsa(".designs .interface .side .btn")[0],
-                },
-                btn: {
-                    e: qsa(".designs .interface .side .btn")[0],
-                },
-                btn: {
-                    e: qsa(".designs .interface .side .btn")[0],
-                },
-                btn: {
-                    e: qsa(".designs .interface .side .btn")[0],
-                },
+                e: qs(".designs .interface .side"),
+                btn: [
+                    {
+                        e: qsa(".designs .interface .side .btn")[0],
+                    },
+                    {
+                        e: qsa(".designs .interface .side .btn")[1],
+                    },
+                    {
+                        e: qsa(".designs .interface .side .btn")[2],
+                    },
+                    {
+                        e: qsa(".designs .interface .side .btn")[3],
+                    },
+                ],
             },
         },
     };
